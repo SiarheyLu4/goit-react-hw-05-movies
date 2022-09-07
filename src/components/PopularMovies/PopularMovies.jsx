@@ -42,7 +42,8 @@ export const PopularMovies = () => {
     };
 
     fetchPopularMovies();
-  }, []);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [setState]);
 
   const { items, loading, error } = state;
 
