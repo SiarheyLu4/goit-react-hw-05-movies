@@ -1,9 +1,13 @@
 import styled from "styled-components";
 
+import { PopularMovies } from "components/PopularMovies/PopularMovies";
+
+
 export const HomePage = () => {
   return (
     <HomeContainer>
       <H2>Home Page</H2>
+      <PopularMovies/>
     </HomeContainer>
   )
 }
