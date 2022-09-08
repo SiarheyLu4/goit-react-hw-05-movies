@@ -1,10 +1,11 @@
+import { MoviesSearch } from "components/MoviesSearch/MoviesSearch";
 import styled from "styled-components";
-
 
 export const MoviesPage = () => {
   return (
     <MoviesContainer>
       <H2>Movies Page</H2>
+      <MoviesSearch/>
     </MoviesContainer>
   )
 }

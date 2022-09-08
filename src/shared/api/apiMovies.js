@@ -24,3 +24,13 @@ export const getFullInfoMovie = async (id) => {
   }
 };
 
+export const getSearchMovies = async (query) => { 
+  try {
+    const response = await fetch(`${URL}/search/movie?api_key=${KEY}&query=${query}`);
+    const movies = await response.json();
+    // console.log(movies);
+    return movies.results;
+  } catch (error) {
+    console.log(error);
+  }
+};
