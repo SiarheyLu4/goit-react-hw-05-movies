@@ -6,7 +6,7 @@ import { PopularMovies } from "components/PopularMovies/PopularMovies";
 export const HomePage = () => {
   return (
     <HomeContainer>
-      <H2>Home Page</H2>
+      <H2>Trending Today</H2>
       <PopularMovies/>
     </HomeContainer>
   )

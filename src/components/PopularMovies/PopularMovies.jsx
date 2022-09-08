@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 import { getPopularMovies } from "shared/api/apiMovies";
+import { MovieList } from "components/MovieList/MovieList";
 
 export const PopularMovies = () => {
   const [state, setState] = useState({
@@ -47,13 +48,9 @@ export const PopularMovies = () => {
 
   const { items, loading, error } = state;
 
-  const elements = items.map(({ id, title }) => <Li key={id}>
-    <LinkEl to={`/movies/${id}`}>{title}</LinkEl>
-  </Li>)
-
   return (
     <Card>
-      <ul>{elements}</ul>
+      {items.length > 0 && <MovieList items={items} />}
       {loading && <p>Loading movies</p>}
       {error && <p>Loading movies failed</p>}
     </Card>
@@ -63,14 +60,4 @@ export const PopularMovies = () => {
 const Card = styled.div`
   margin: 12px;
 `
-const LinkEl = styled(Link)`
-  text-decoration: none;
-  color: inherit;
-  &: hover{
-    color: #5941e8;
-  }
-`
-const Li = styled.li`
-padding-bottom: 4px;
-font-size: 24px;
-`
+
