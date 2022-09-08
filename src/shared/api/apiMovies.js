@@ -6,9 +6,21 @@ export const getPopularMovies = async () => {
   try {
     const response = await fetch(`${URL}/trending/movie/day?api_key=${KEY}`);
     const movies = await response.json();
-    console.log(movies);
+    // console.log(movies);
     return movies.results;
   } catch (error) {
     console.log(error);
   }
 };
+
+export const getFullInfoMovie = async (id) => {
+  try {
+    const response = await fetch(`${URL}/movie/${id}?api_key=${KEY}`);
+    const movie = await response.json();
+    // console.log(movie);
+    return movie;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
