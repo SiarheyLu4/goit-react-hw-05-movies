@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import { getFullInfoMovie } from "shared/api/apiMovies";
 
@@ -12,9 +12,6 @@ export const MovieDetails = () => {
     loading: false,
     error: null,
   });
-
-  const navigate = useNavigate();
-  const goBack = () => navigate(-1);
 
   // const params = useParams();
   // console.log(params);
@@ -64,8 +61,7 @@ export const MovieDetails = () => {
   
   const posterImg = `https://image.tmdb.org/t/p/w500${poster_path}`;
 
-  return (<>
-    <Btm type="button" onClick={goBack}>Go back</Btm>
+  return (
     <Card>
       <Img src={posterImg} alt={original_title} />
       <CardText>
@@ -82,20 +78,8 @@ export const MovieDetails = () => {
           </P>
       </CardText>
     </Card>
-    </>
   )
 }
-
-const Btm = styled.button`
-  margin: 12px;
-  width: 100px;
-  height: 32px;
-  font-size: 16px;
-  background-color: #d3cff6;
-  &:hover{
-    background-color: #8b79f6;
-  }
-`
 
 const Card = styled.div`
   display: flex;
