@@ -62,29 +62,28 @@ export const MovieDetails = () => {
   const posterImg = `https://image.tmdb.org/t/p/w500${poster_path}`;
 
   return (
-    <Card>
-      <Img src={posterImg} alt={original_title} />
-      <CardText>
-        <H2>{original_title}</H2>
-        <P>Release date: {release_date}</P>
-        <P>Rating: {vote_average}</P>
-        <h3>Overview: </h3>
-        <P>{overview}</P>
-        <h3>Genres:</h3>
-        <P>
-          {genres && genres.map(genre => (
-            <li key={genre.id}>{genre.name}</li>
-          ))}
+      <Card>
+        <Img src={posterImg} alt={original_title} />
+        <CardText>
+          <H2>{original_title}</H2>
+          <P>Release date: {release_date}</P>
+          <P>Rating: {vote_average}</P>
+          <h3>Overview: </h3>
+          <P>{overview}</P>
+          <h3>Genres:</h3>
+          <P>
+            {genres && genres.map(genre => (
+              <li key={genre.id}>{genre.name}</li>
+            ))}
           </P>
-      </CardText>
-    </Card>
+        </CardText>
+      </Card>
   )
 }
 
 const Card = styled.div`
   display: flex;
 `
-
 const Img = styled.img`
   width: 280px;
   margin: 12px;

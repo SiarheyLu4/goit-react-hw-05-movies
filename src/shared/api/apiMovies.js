@@ -34,3 +34,14 @@ export const getSearchMovies = async (query) => {
     console.log(error);
   }
 };
+
+export const getCast = async (id) => {
+  try {
+    const response = await fetch(`${URL}/movie/${id}/credits?api_key=${KEY}`);
+    const cast = await response.json();
+    console.log(cast);
+    return cast;
+  } catch (error) {
+    console.log(error);
+  }
+};

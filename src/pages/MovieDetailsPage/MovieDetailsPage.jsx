@@ -1,5 +1,5 @@
 import styled from "styled-components";
-// import { useParams } from "react-router-dom";
+import { useParams, Link, Outlet } from "react-router-dom";
 // import { useState, useEffect } from "react";
 
 import { MovieDetails } from "components/MovieDetails/MovieDetails";
@@ -8,10 +8,15 @@ import { Button } from "components/Button/Button";
 
 export const MovieDetailsPage = () => {
 
+  const { id } = useParams();
+
   return (
     <MovieDetailsContainer>
       <Button/>
-      <MovieDetails/>
+      <MovieDetails />
+      <hr />
+      <Link to={`/movies/${id}/cast`}>Cast</Link>
+      <Outlet/>
     </MovieDetailsContainer>
   )
 }

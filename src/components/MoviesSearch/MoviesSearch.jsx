@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import styled from "styled-components";
+import { useSearchParams } from "react-router-dom";
+
 
 import { MoviesSearchForm } from "components/MoviesSearchForm/MoviesSearchForm";
 import { getSearchMovies } from "shared/api/apiMovies";
@@ -12,7 +14,11 @@ export const MoviesSearch = () => {
     error: null,
   });
 
-  const [search, setSearch] = useState('');
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const search = searchParams.get('search');
+
+  // const [search, setSearch] = useState('');
 
   useEffect(() => {
     const fetchMovies = async () => {
@@ -46,7 +52,7 @@ export const MoviesSearch = () => {
   }, [search]);
 
   const changeSearch = ({ search }) => {
-    setSearch(search);
+    setSearchParams({search});
   };
 
   const { items, loading, error } = state;
