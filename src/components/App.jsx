@@ -2,7 +2,7 @@
 import { Routes, Route } from "react-router-dom";
 
 import { Menu } from "./Menu/Menu";
-import { Loader } from "./Loader/Loader";
+// import { Loader } from "./Loader/Loader";
 
 import { HomePage } from "pages/HomePage/HomePage";
 import { MoviesPage } from "pages/MoviesPage/MoviesPage";
