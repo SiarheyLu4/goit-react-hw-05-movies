@@ -15,8 +15,10 @@ export const MovieDetailsPage = () => {
       <Button/>
       <MovieDetails />
       <hr />
-      <Link to={`/movies/${id}/cast`}>Cast</Link>
-      <Outlet/>
+      <LinkEl to={`/movies/${id}/cast`}>Cast</LinkEl>
+      <LinkEl to={`/movies/${id}/reviews`}>Reviews</LinkEl>
+      <hr/>
+      <Outlet />
     </MovieDetailsContainer>
   )
 }
@@ -25,8 +27,12 @@ const MovieDetailsContainer = styled.div`
   max-width: 1140px;
   margin: 0 auto;
 `
-// const H2 = styled.h2`
-// font-size: 32px;
-// text-align: center;
-// margin:12px;
-// `
+const LinkEl = styled(Link)`
+  font-size: 24px;
+  text-decoration: none;
+  color: inherit;
+  margin: 12px;
+  &:hover{
+    color: #5941e8;
+  }
+`

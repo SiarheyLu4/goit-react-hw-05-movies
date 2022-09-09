@@ -45,3 +45,14 @@ export const getCast = async (id) => {
     console.log(error);
   }
 };
+
+export const getReviews = async (id) => {
+  try {
+    const response = await fetch(`${URL}/movie/${id}/reviews?api_key=${KEY}`);
+    const reviews = await response.json();
+    console.log(reviews);
+    return reviews;
+  } catch (error) {
+    console.log(error);
+  }
+};

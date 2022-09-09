@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-export const MovieList = ({items}) => {
+export const MovieList = ({ items }) => {
   const elements = items.map(({ id, title }) => <Li key={id}>
     <LinkEl to={`/movies/${id}`}>{title}</LinkEl>
     </Li>);
