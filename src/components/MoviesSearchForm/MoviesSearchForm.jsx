@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
+import PropTypes from 'prop-types';
 
 export const MoviesSearchForm = ({onSubmit}) => {
   const [state, setState] = useState({
@@ -35,6 +36,10 @@ export const MoviesSearchForm = ({onSubmit}) => {
     </form>
   )
 };
+
+MoviesSearchForm.propTypes = {
+  onSubmit: PropTypes.func.isRequired
+}
 
 const Input = styled.input`
   width: 400px;

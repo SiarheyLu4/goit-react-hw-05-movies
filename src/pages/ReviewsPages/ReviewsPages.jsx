@@ -59,8 +59,6 @@ const [state, setState] = useState({
     </Li>
   ));
 
-  console.log(elements);
-
   return (
     <div>
       {items.length > 0 ? (<Ul> {elements} </Ul>) :
