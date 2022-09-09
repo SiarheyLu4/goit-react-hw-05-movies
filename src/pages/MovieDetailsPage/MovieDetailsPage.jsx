@@ -6,7 +6,7 @@ import { MovieDetails } from "components/MovieDetails/MovieDetails";
 import { Button } from "components/Button/Button";
 
 
-export const MovieDetailsPage = () => {
+const MovieDetailsPage = () => {
 
   const { id } = useParams();
 
@@ -36,3 +36,5 @@ const LinkEl = styled(Link)`
     color: #5941e8;
   }
 `
+
+export default MovieDetailsPage;

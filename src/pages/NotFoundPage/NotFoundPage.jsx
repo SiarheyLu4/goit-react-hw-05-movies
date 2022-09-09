@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-export const NotFoundPage = () => {
+const NotFoundPage = () => {
   return (
     <NotFoundContainer>
       <H2>404 Page not found</H2>
@@ -26,3 +26,5 @@ text-align: center;
 text-decoration: none;
 color: inherit;
 `
+
+export default NotFoundPage;

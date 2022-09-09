@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { PopularMovies } from "components/PopularMovies/PopularMovies";
 
 
-export const HomePage = () => {
+const HomePage = () => {
   return (
     <HomeContainer>
       <H2>Trending Today</H2>
@@ -21,3 +21,5 @@ font-size: 32px;
 text-align: center;
 margin:12px;
 `
+
+export default HomePage;

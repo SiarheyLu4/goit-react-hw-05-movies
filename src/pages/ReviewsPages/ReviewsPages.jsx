@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 import { getReviews } from "shared/api/apiMovies";
   
-export const ReviewsPages = () => {
+const ReviewsPages = () => {
 const [state, setState] = useState({
     item: {},
     loading: false,
@@ -71,3 +71,5 @@ const Ul = styled.ul`
 const Li = styled.li`
   margin: 12px;
 `
+
+export default ReviewsPages;

@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { getCast } from "shared/api/apiMovies";
 import smail from '../../Images/smail.jpg'
 
-export const CastPage = () => {
+const CastPage = () => {
 
   const [state, setState] = useState({
     item: {},
@@ -83,3 +83,5 @@ const Li = styled.li`
   margin: 15px;
   text-align: center;
 `
+
+export default CastPage;

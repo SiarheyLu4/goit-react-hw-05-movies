@@ -12,6 +12,8 @@ import { Loader } from "./Loader/Loader";
 // import { AboutPage } from "pages/AboutPage/AboutPage";
 // import { NotFoundPage } from "pages/NotFoundPage/NotFoundPage";
 
+// import HomePage from "pages/HomePage/HomePage";
+
 
 const HomePage = lazy(() => import("pages/HomePage/HomePage"));
 const MoviesPage = lazy(() => import("pages/MoviesPage/MoviesPage"));

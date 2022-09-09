@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 import { Button } from "components/Button/Button";
 
-export const AboutPage = () => {
+const AboutPage = () => {
   return (
     <AboutContainer>
       <Button/>
@@ -26,3 +26,5 @@ const P = styled.p`
   text-align: center;
   margin:12px;
 `
+
+export default AboutPage;

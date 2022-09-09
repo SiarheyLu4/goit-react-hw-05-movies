@@ -1,7 +1,7 @@
 import { MoviesSearch } from "components/MoviesSearch/MoviesSearch";
 import styled from "styled-components";
 
-export const MoviesPage = () => {
+const MoviesPage = () => {
   return (
     <MoviesContainer>
       <H2>Movies Page</H2>
@@ -19,3 +19,4 @@ font-size: 32px;
 text-align: center;
 margin:12px;
 `
+export default MoviesPage;
