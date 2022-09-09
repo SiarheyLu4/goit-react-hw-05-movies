@@ -6,7 +6,7 @@ import { getReviews } from "shared/api/apiMovies";
   
 const ReviewsPages = () => {
 const [state, setState] = useState({
-    item: {},
+    items: [],
     loading: false,
     error: null,
   });
@@ -28,7 +28,7 @@ const [state, setState] = useState({
         setState(prevState => {
           return {
             ...prevState,
-            item: result,
+            items: result,
           }
         })
       } catch (error) {
@@ -50,24 +50,28 @@ const [state, setState] = useState({
     fetchCast();
   }, [id, setState]);
 
-  const { results } = state.item;
+  const { items, loading, error } = state;
+
+  const elements = items.map(({ id, author, content }) => (
+    <Li key={id}>
+      <h3>Author: {author}</h3>
+      <p>{content}</p>
+    </Li>
+  ));
+
+  console.log(elements);
 
   return (
     <div>
-      <ul>
-        {results.length > 0 ? results.map(({ id, author, content }) => (
-            <Li key={id}>
-              <h3>Author: {author}</h3>
-              <p>{content}</p>
-            </Li>
-          )) : <P>We don`t have any reviews for this movie</P>}
-      </ul>
+      {items.length > 0 ? (<Ul> {elements} </Ul>) :
+        (<p>We don't have any revuews for this movies</p>)}
+      {loading && <p>Loading movies</p>}
+      {error && <p>Loading movies failed</p>}
     </div>
   )
 }
 
-const P = styled.p`
-  margin: 12px;
+const Ul = styled.ul`
 `
 const Li = styled.li`
   margin: 12px;

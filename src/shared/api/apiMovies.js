@@ -50,8 +50,8 @@ export const getReviews = async (id) => {
   try {
     const response = await fetch(`${URL}/movie/${id}/reviews?api_key=${KEY}`);
     const reviews = await response.json();
-    // console.log(reviews);
-    return reviews;
+    console.log(reviews);
+    return reviews.results;
   } catch (error) {
     console.log(error);
   }

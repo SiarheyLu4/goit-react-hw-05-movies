@@ -52,7 +52,7 @@ const CastPage = () => {
     fetchCast();
   }, [id, setState]);
 
-  const { cast } = state.item;
+  const { cast, loading, error  } = state.item;
 
   return (
     <div>
@@ -65,6 +65,8 @@ const CastPage = () => {
             </Li>
           ))}
       </Ul>
+      {loading && <p>Loading movies</p>}
+      {error && <p>Loading movies failed</p>}
     </div>
   )
 }
