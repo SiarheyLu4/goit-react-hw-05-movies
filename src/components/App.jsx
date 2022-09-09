@@ -12,9 +12,6 @@ import { Loader } from "./Loader/Loader";
 // import { AboutPage } from "pages/AboutPage/AboutPage";
 // import { NotFoundPage } from "pages/NotFoundPage/NotFoundPage";
 
-// import HomePage from "pages/HomePage/HomePage";
-
-
 const HomePage = lazy(() => import("pages/HomePage/HomePage"));
 const MoviesPage = lazy(() => import("pages/MoviesPage/MoviesPage"));
 const MovieDetailsPage = lazy(() => import("pages/MovieDetailsPage/MovieDetailsPage"));
@@ -22,7 +19,6 @@ const CastPage = lazy(() => import("pages/CastPage/CastPage"));
 const ReviewsPages = lazy(() => import("pages/ReviewsPages/ReviewsPages"));
 const AboutPage = lazy(() => import("pages/AboutPage/AboutPage"));
 const NotFoundPage = lazy(() => import("pages/NotFoundPage/NotFoundPage"));
-
 
 export const App = () => {
   return (

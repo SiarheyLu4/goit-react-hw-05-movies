@@ -39,7 +39,7 @@ export const getCast = async (id) => {
   try {
     const response = await fetch(`${URL}/movie/${id}/credits?api_key=${KEY}`);
     const cast = await response.json();
-    console.log(cast);
+    // console.log(cast);
     return cast;
   } catch (error) {
     console.log(error);
@@ -50,7 +50,7 @@ export const getReviews = async (id) => {
   try {
     const response = await fetch(`${URL}/movie/${id}/reviews?api_key=${KEY}`);
     const reviews = await response.json();
-    console.log(reviews);
+    // console.log(reviews);
     return reviews;
   } catch (error) {
     console.log(error);

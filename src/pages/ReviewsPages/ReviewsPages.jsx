@@ -54,19 +54,20 @@ const [state, setState] = useState({
 
   return (
     <div>
-      <Ul>
-        {results && results.map(({id, author, content}) => (
+      <ul>
+        {results.length > 0 ? results.map(({ id, author, content }) => (
             <Li key={id}>
               <h3>Author: {author}</h3>
               <p>{content}</p>
             </Li>
-          ))}
-      </Ul>
+          )) : <P>We don`t have any reviews for this movie</P>}
+      </ul>
     </div>
   )
 }
 
-const Ul = styled.ul`
+const P = styled.p`
+  margin: 12px;
 `
 const Li = styled.li`
   margin: 12px;
