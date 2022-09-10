@@ -1,10 +1,15 @@
 import styled from "styled-components";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 
 export const Button = () => {
+  const location = useLocation();
+  const from = location.state?.from || "/";
+
+  // console.log(location.state.from);
+
   const navigate = useNavigate();
-  const goBack = () => navigate(-1);
+  const goBack = () => navigate(from);
 
   return (
     <Btm type="button" onClick={goBack}>Go back</Btm>

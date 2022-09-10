@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { useParams, Link, Outlet } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 // import { useState, useEffect } from "react";
 
 import { MovieDetails } from "components/MovieDetails/MovieDetails";
@@ -7,6 +8,8 @@ import { Button } from "components/Button/Button";
 
 
 const MovieDetailsPage = () => {
+  const location = useLocation();
+  const from = location.state?.from || "/";
 
   const { id } = useParams();
 
@@ -15,8 +18,8 @@ const MovieDetailsPage = () => {
       <Button/>
       <MovieDetails />
       <hr />
-      <LinkEl to={`/movies/${id}/cast`}>Cast</LinkEl>
-      <LinkEl to={`/movies/${id}/reviews`}>Reviews</LinkEl>
+      <LinkEl state={{from}} to={`/movies/${id}/cast`}>Cast</LinkEl>
+      <LinkEl state={{from}} to={`/movies/${id}/reviews`}>Reviews</LinkEl>
       <hr/>
       <Outlet />
     </MovieDetailsContainer>
