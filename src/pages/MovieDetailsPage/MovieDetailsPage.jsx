@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { useParams, Link, Outlet } from "react-router-dom";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 // import { useState, useEffect } from "react";
 
 import { MovieDetails } from "components/MovieDetails/MovieDetails";
